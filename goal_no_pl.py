@@ -301,7 +301,7 @@ async def main():
             matches = await get_today_matches(api)
             
             now_ts = int(time.time())  # current Unix timestamp
-            now_matches = [m for m in matches if now_ts - 2.5*3600 <= m.get("startTimestamp", 0) <= now_ts + 1*3600]
+            now_matches = [m for m in matches if now_ts - 2*3600 <= m.get("startTimestamp", 0) <= now_ts + 1*3600]
 
             if  now_matches:
                 pl_matches = [
